@@ -1,0 +1,13 @@
+---
+plugin: amazon.aws.aws_ec2
+regions:
+   - us-east-1
+filters:
+  tag:Name: ["private-instance-01", "private-instance-02"]
+compose:
+  ansible_host: private_ip_address  # Uncomment if using private instances
+strict: False
+cache: True
+cache_timeout: 600
+ansible_ssh_common_args: '-o ConnectTimeout=60'
+
