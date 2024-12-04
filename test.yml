@@ -1,0 +1,10 @@
+---
+- name: Install Docker and Configure Nginx Container
+  hosts: all  # This will target all hosts defined in the inventory
+  become: true
+  connection: ssh  # Use SSH for remote connection
+  vars_files:
+    - docker/vars/main.yml
+  tasks:
+    - include_tasks: docker/tasks/main.yml
+
